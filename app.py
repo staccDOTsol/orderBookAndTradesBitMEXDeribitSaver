@@ -182,6 +182,6 @@ if __name__ == "__main__":
 
 	msg_counter = 0
 
-	while ws.sock.connected:
+	while ws.sock != None:
 		sleep(1)
 		msg_counter += 1

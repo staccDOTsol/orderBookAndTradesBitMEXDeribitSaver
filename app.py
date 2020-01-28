@@ -57,7 +57,12 @@ def on_error(ws, error):
 
 def on_close(ws):
 	print("### closed ###")
-	
+	ws3 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
+							  on_message = on_message,
+							  on_error = on_error,
+							  on_close = on_close)
+	ws3.on_open = on_open
+	ws3.run_forever()
  
 	
 
@@ -66,6 +71,12 @@ def on_error2(ws, error):
 
 def on_close2(ws):
 	print("### closed ###")
+	ws4 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
+							  on_message = on_message2,
+							  on_error = on_error2,
+							  on_close = on_close2)
+	ws4.on_open = on_open2
+	ws4.run_forever()
 def on_open(ws):
 	def run(*args):
 		global sendCount
@@ -122,33 +133,6 @@ def doloop(ws, ws2):
 		sleep(1)
 		msg_counter += 1
 	
-
-
-	ws3 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-							  on_message = on_message,
-							  on_error = on_error,
-							  on_close = on_close)
-	ws3.on_open = on_open
-	wst = threading.Thread(target=ws3.run_forever)
-	wst.daemon = True
-	wst.start()
-	while not ws3.sock.connected:
-		sleep(1)
-	
-	msg_counter = 0
-
-
-
-	ws4 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-							  on_message = on_message2,
-							  on_error = on_error2,
-							  on_close = on_close2)
-	ws4.on_open = on_open2
-	wst2 = threading.Thread(target=ws4.run_forever)
-	wst2.daemon = True
-	wst2.start()
-	while not ws4.sock.connected:
-		sleep(1)
 	doloop(ws3, ws4)	
 
 		

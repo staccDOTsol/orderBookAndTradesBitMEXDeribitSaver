@@ -449,3 +449,39 @@
 2020-01-28T05:13:18.691+0000 I  NETWORK  [conn38] end connection 127.0.0.1:59002 (8 connections now open)
 2020-01-28T05:13:18.691+0000 I  NETWORK  [conn37] end connection 127.0.0.1:58928 (7 connections now open)
 2020-01-28T05:13:18.691+0000 I  NETWORK  [conn36] end connection 127.0.0.1:58920 (6 connections now open)
+2020-01-28T05:13:40.550+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:59278 #39 (7 connections now open)
+2020-01-28T05:13:40.550+0000 I  NETWORK  [conn39] received client metadata from 127.0.0.1:59278 conn39: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T05:13:41.195+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:13:41.434+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:59290 #40 (8 connections now open)
+2020-01-28T05:13:41.435+0000 I  NETWORK  [conn40] received client metadata from 127.0.0.1:59290 conn40: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T05:13:41.461+0000 I  ACCESS   [conn40] Successfully authenticated as principal coindex on admin from client 127.0.0.1:59290
+2020-01-28T05:14:11.196+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:14:18.490+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:59428 #41 (9 connections now open)
+2020-01-28T05:14:18.490+0000 I  NETWORK  [conn41] received client metadata from 127.0.0.1:59428 conn41: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T05:14:18.492+0000 I  ACCESS   [conn41] Successfully authenticated as principal coindex on admin from client 127.0.0.1:59428
+2020-01-28T05:14:41.198+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:15:11.199+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:15:41.200+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:16:11.202+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:16:41.203+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:17:11.203+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:17:41.204+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:18:11.206+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:18:41.207+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:19:11.208+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:19:41.209+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:20:11.209+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:20:41.211+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:21:11.212+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:21:41.212+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:22:11.213+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:22:41.214+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:23:11.215+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:23:41.215+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:23:44.188+0000 I  NETWORK  [conn41] end connection 127.0.0.1:59428 (8 connections now open)
+2020-01-28T05:23:44.188+0000 I  NETWORK  [conn40] end connection 127.0.0.1:59290 (7 connections now open)
+2020-01-28T05:23:44.188+0000 I  NETWORK  [conn39] end connection 127.0.0.1:59278 (6 connections now open)
+2020-01-28T05:24:11.215+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:24:41.216+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:25:11.217+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:25:41.217+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }

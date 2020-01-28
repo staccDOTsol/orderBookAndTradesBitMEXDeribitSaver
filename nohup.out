@@ -1,0 +1,79 @@
+2020-01-28T03:00:07.380+0000 I  CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] MongoDB starting : pid=23951 port=27017 dbpath=/var/lib/mongodb 64-bit host=beast-can
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] db version v4.2.2
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] git version: a0bbbff6ada159e19298d37946ac8dc4b497eadf
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] allocator: tcmalloc
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] modules: none
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] build environment:
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten]     distmod: ubuntu1604
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten]     distarch: x86_64
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten]     target_arch: x86_64
+2020-01-28T03:00:07.382+0000 I  CONTROL  [initandlisten] options: { security: { authorization: "enabled" }, storage: { dbPath: "/var/lib/mongodb" } }
+2020-01-28T03:00:07.383+0000 I  STORAGE  [initandlisten] Detected data files in /var/lib/mongodb created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2020-01-28T03:00:07.383+0000 I  STORAGE  [initandlisten] 
+2020-01-28T03:00:07.383+0000 I  STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2020-01-28T03:00:07.383+0000 I  STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2020-01-28T03:00:07.383+0000 I  STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=14564M,cache_overflow=(file_max=0M),session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress],
+2020-01-28T03:00:08.039+0000 I  STORAGE  [initandlisten] WiredTiger message [1580180408:39155][23951:0x7f355dc39b40], txn-recover: Recovering log 6 through 7
+2020-01-28T03:00:08.107+0000 I  STORAGE  [initandlisten] WiredTiger message [1580180408:107184][23951:0x7f355dc39b40], txn-recover: Recovering log 7 through 7
+2020-01-28T03:00:08.207+0000 I  STORAGE  [initandlisten] WiredTiger message [1580180408:207654][23951:0x7f355dc39b40], txn-recover: Main recovery loop: starting at 6/10752 to 7/256
+2020-01-28T03:00:08.335+0000 I  STORAGE  [initandlisten] WiredTiger message [1580180408:335372][23951:0x7f355dc39b40], txn-recover: Recovering log 6 through 7
+2020-01-28T03:00:08.415+0000 I  STORAGE  [initandlisten] WiredTiger message [1580180408:415251][23951:0x7f355dc39b40], txn-recover: Recovering log 7 through 7
+2020-01-28T03:00:08.478+0000 I  STORAGE  [initandlisten] WiredTiger message [1580180408:478983][23951:0x7f355dc39b40], txn-recover: Set global recovery timestamp: (0,0)
+2020-01-28T03:00:08.547+0000 I  RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2020-01-28T03:00:08.553+0000 I  STORAGE  [initandlisten] Timestamp monitor starting
+2020-01-28T03:00:08.560+0000 I  CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] 
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2020-01-28T03:00:08.561+0000 I  CONTROL  [initandlisten] 
+2020-01-28T03:00:08.566+0000 I  SHARDING [initandlisten] Marking collection local.system.replset as collection version: <unsharded>
+2020-01-28T03:00:08.568+0000 I  STORAGE  [initandlisten] Flow Control is enabled on this deployment.
+2020-01-28T03:00:08.568+0000 I  SHARDING [initandlisten] Marking collection admin.system.roles as collection version: <unsharded>
+2020-01-28T03:00:08.568+0000 I  SHARDING [initandlisten] Marking collection admin.system.version as collection version: <unsharded>
+2020-01-28T03:00:08.569+0000 I  SHARDING [initandlisten] Marking collection local.startup_log as collection version: <unsharded>
+2020-01-28T03:00:08.570+0000 I  FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/lib/mongodb/diagnostic.data'
+2020-01-28T03:00:08.598+0000 I  NETWORK  [initandlisten] Listening on /tmp/mongodb-27017.sock
+2020-01-28T03:00:08.598+0000 I  SHARDING [LogicalSessionCacheRefresh] Marking collection config.system.sessions as collection version: <unsharded>
+2020-01-28T03:00:08.598+0000 I  NETWORK  [initandlisten] Listening on 127.0.0.1
+2020-01-28T03:00:08.598+0000 I  NETWORK  [initandlisten] waiting for connections on port 27017
+2020-01-28T03:00:08.598+0000 I  SHARDING [LogicalSessionCacheReap] Marking collection config.transactions as collection version: <unsharded>
+2020-01-28T03:00:08.826+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57224 #1 (1 connection now open)
+2020-01-28T03:00:08.831+0000 I  SHARDING [conn1] Marking collection admin.system.users as collection version: <unsharded>
+2020-01-28T03:00:08.831+0000 I  NETWORK  [conn1] received client metadata from 127.0.0.1:57224 conn1: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T03:00:08.843+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57226 #2 (2 connections now open)
+2020-01-28T03:00:08.858+0000 I  NETWORK  [conn2] received client metadata from 127.0.0.1:57226 conn2: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T03:00:08.889+0000 I  ACCESS   [conn2] Successfully authenticated as principal coindex on admin from client 127.0.0.1:57226
+2020-01-28T03:00:08.894+0000 I  SHARDING [conn2] Marking collection deribit.mex_order_book as collection version: <unsharded>
+2020-01-28T03:00:08.933+0000 I  SHARDING [conn2] Marking collection deribit.mex_trade as collection version: <unsharded>
+2020-01-28T03:00:09.000+0000 I  SHARDING [ftdc] Marking collection local.oplog.rs as collection version: <unsharded>
+2020-01-28T03:00:48.900+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57414 #3 (3 connections now open)
+2020-01-28T03:00:48.900+0000 I  NETWORK  [conn3] received client metadata from 127.0.0.1:57414 conn3: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-1050-gcp" }, platform: "Node.js v10.18.1, LE, mongodb-core: 2.1.20" }
+2020-01-28T03:00:48.914+0000 I  ACCESS   [conn3] Successfully authenticated as principal coindexread on admin from client 127.0.0.1:57414
+2020-01-28T03:00:54.526+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:00:54.533+0000 I  SHARDING [conn3] Marking collection deribit.trade as collection version: <unsharded>
+2020-01-28T03:00:54.534+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57446 #4 (4 connections now open)
+2020-01-28T03:00:54.536+0000 I  ACCESS   [conn4] Successfully authenticated as principal coindexread on admin from client 127.0.0.1:57446
+2020-01-28T03:00:54.537+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57448 #5 (5 connections now open)
+2020-01-28T03:00:54.540+0000 I  ACCESS   [conn5] Successfully authenticated as principal coindexread on admin from client 127.0.0.1:57448
+2020-01-28T03:00:54.541+0000 I  SHARDING [conn3] Marking collection deribit.order_book as collection version: <unsharded>
+2020-01-28T03:01:04.933+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57488 #6 (6 connections now open)
+2020-01-28T03:01:04.933+0000 I  NETWORK  [conn6] received client metadata from 127.0.0.1:57488 conn6: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T03:01:06.364+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57500 #7 (7 connections now open)
+2020-01-28T03:01:06.364+0000 I  NETWORK  [conn7] received client metadata from 127.0.0.1:57500 conn7: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T03:01:06.380+0000 I  ACCESS   [conn7] Successfully authenticated as principal coindex on admin from client 127.0.0.1:57500
+2020-01-28T03:01:10.619+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:01:15.420+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:01:15.429+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:57536 #8 (8 connections now open)
+2020-01-28T03:01:15.433+0000 I  ACCESS   [conn8] Successfully authenticated as principal coindexread on admin from client 127.0.0.1:57536
+2020-01-28T03:01:21.724+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:01:26.632+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:01:31.000+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:01:40.620+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:02:10.622+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T03:02:40.624+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }

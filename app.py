@@ -19,11 +19,12 @@ pyclient = pymongo.MongoClient("mongodb://coindex:" + os.getenv('db_pass') + "@l
 
 pydb = pyclient["deribit"]
 import calendar;
-def on_message2(ws, message):
+
+def on_message(ws, message):
 	mJson = json.loads(message)
 
 	if 'notifications' in mJson:
-
+		
 		if mJson['notifications'][0]['message'] == 'order_book_event':
 			
 			result=(mJson['notifications'][0]['result'])
@@ -33,20 +34,14 @@ def on_message2(ws, message):
 			
 			col = pydb["order_book"]
 			col.insert_one(result)
-			#print(mJson['notifications'][0]['message'])
+			print(mJson['notifications'][0]['message'])
 
-
-def on_message(ws, message):
-	mJson = json.loads(message)
-
-	if 'notifications' in mJson:
-		
 		if mJson['notifications'][0]['message'] == 'trade_event':
 			trades = mJson['notifications'][0]['result']
 			now = datetime.now()
 			col = pydb["trade"]
 			col.insert_many(trades)
-			#print(mJson['notifications'][0]['message'])
+			print(mJson['notifications'][0]['message'])
 
 		
 	else:
@@ -57,26 +52,7 @@ def on_error(ws, error):
 
 def on_close(ws):
 	print("### closed ###")
-	ws3 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-							  on_message = on_message,
-							  on_error = on_error,
-							  on_close = on_close)
-	ws3.on_open = on_open
-	ws3.run_forever()
- 
-	
-
-def on_error2(ws, error):
-	print(error)
-
-def on_close2(ws):
-	print("### closed ###")
-	ws4 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-							  on_message = on_message2,
-							  on_error = on_error2,
-							  on_close = on_close2)
-	ws4.on_open = on_open2
-	ws4.run_forever()
+		
 def on_open(ws):
 	def run(*args):
 		global sendCount
@@ -93,15 +69,7 @@ def on_open(ws):
 		};
 		ws.send(json.dumps(obj))
 		sendCount = sendCount + 1
-		time.sleep(1)
-		#ws.close()
-		#print("thread terminating...")
-	thread.start_new_thread(run, ())
-
-
-def on_open2(ws):
-	def run(*args):
-		global sendCount
+		time.sleep(5)
 		args = {
 			"instrument": ["BTC-PERPETUAL"],
 			"event": ["order_book"],
@@ -122,20 +90,10 @@ def on_open2(ws):
 	thread.start_new_thread(run, ())
 
 
+
 sendCount = 0
 import threading
 from time import sleep
-def doloop(ws, ws2):
-	msg_counter = 0
-	while not ws.sock.connected:
-		sleep(1)
-	while ws.sock.connected:
-		sleep(1)
-		msg_counter += 1
-	print('doloop')
-	doloop(ws, ws2)	
-
-		
 if __name__ == "__main__":
 	websocket.enableTrace(True)
 	ws = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
@@ -143,21 +101,4 @@ if __name__ == "__main__":
 							  on_error = on_error,
 							  on_close = on_close)
 	ws.on_open = on_open
-	wst = threading.Thread(target=ws.run_forever)
-	wst.daemon = True
-	wst.start()
-
- 
-	ws2 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-							  on_message = on_message2,
-							  on_error = on_error2,
-							  on_close = on_close2)
-	ws2.on_open = on_open2
-	wst2 = threading.Thread(target=ws2.run_forever)
-	wst2.daemon = True
-	wst2.start()
-	conn_timeout = 5
-	
-		
-
-	doloop(ws, ws2)
+	ws.run_forever()

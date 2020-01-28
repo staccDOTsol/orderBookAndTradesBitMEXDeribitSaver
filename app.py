@@ -136,13 +136,13 @@ if __name__ == "__main__":
 	wst2.daemon = True
 	wst2.start()
 	conn_timeout = 5
-	while not ws.sock.connected:
-		sleep(1)
+	
 		
 
 	msg_counter = 0
 	while True:
-
+		while not ws.sock.connected:
+			sleep(1)
 		while ws.sock.connected:
 			sleep(1)
 			msg_counter += 1

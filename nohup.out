@@ -435,3 +435,17 @@
 2020-01-28T05:10:41.191+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
 2020-01-28T05:11:11.192+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
 2020-01-28T05:11:41.193+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:12:07.490+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:58920 #36 (7 connections now open)
+2020-01-28T05:12:07.492+0000 I  NETWORK  [conn36] received client metadata from 127.0.0.1:58920 conn36: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T05:12:08.387+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:58928 #37 (8 connections now open)
+2020-01-28T05:12:08.388+0000 I  NETWORK  [conn37] received client metadata from 127.0.0.1:58928 conn37: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T05:12:08.442+0000 I  ACCESS   [conn37] Successfully authenticated as principal coindex on admin from client 127.0.0.1:58928
+2020-01-28T05:12:11.194+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:12:27.763+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:59002 #38 (9 connections now open)
+2020-01-28T05:12:27.764+0000 I  NETWORK  [conn38] received client metadata from 127.0.0.1:59002 conn38: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T05:12:27.765+0000 I  ACCESS   [conn38] Successfully authenticated as principal coindex on admin from client 127.0.0.1:59002
+2020-01-28T05:12:41.195+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:13:11.195+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T05:13:18.691+0000 I  NETWORK  [conn38] end connection 127.0.0.1:59002 (8 connections now open)
+2020-01-28T05:13:18.691+0000 I  NETWORK  [conn37] end connection 127.0.0.1:58928 (7 connections now open)
+2020-01-28T05:13:18.691+0000 I  NETWORK  [conn36] end connection 127.0.0.1:58920 (6 connections now open)

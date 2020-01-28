@@ -34,7 +34,7 @@ def on_message(ws, message):
 			
 			col = pydb["order_book"]
 			col.insert_one(result)
-			print(mJson['notifications'][0]['message'])
+			#print(mJson['notifications'][0]['message'])
 
 		if mJson['notifications'][0]['message'] == 'trade_event':
 			trades = mJson['notifications'][0]['result']
@@ -59,7 +59,7 @@ def on_open(ws):
 		
 		args = {
 			"instrument": ["BTC-PERPETUAL"],
-			"event": ["trade"]
+			"event": ["trade", "order_book"]
 		};
 		obj = { 
 			"id": str(sendCount),
@@ -70,21 +70,6 @@ def on_open(ws):
 		ws.send(json.dumps(obj))
 		sendCount = sendCount + 1
 		time.sleep(5)
-		args = {
-			"instrument": ["BTC-PERPETUAL"],
-			"event": ["order_book"],
-			"depth": 10
-		};
-
-		obj = { 
-			"id": str(sendCount),
-			"action": "/api/v1/private/subscribe",
-			"arguments": args,
-			"sig": client.generate_signature("/api/v1/private/subscribe", args) 
-		};
-
-		ws.send(json.dumps(obj))
-		sendCount = sendCount + 1
 		#ws.close()
 		#print("thread terminating...")
 	thread.start_new_thread(run, ())

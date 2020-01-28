@@ -716,3 +716,9 @@
 2020-01-28T06:34:11.551+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
 2020-01-28T06:34:41.554+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
 2020-01-28T06:35:11.557+0000 I  ACCESS   [conn5] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T06:35:22.037+0000 I  NETWORK  [listener] connection accepted from 127.0.0.1:49402 #67 (7 connections now open)
+2020-01-28T06:35:22.038+0000 I  NETWORK  [conn67] received client metadata from 127.0.0.1:49402 conn67: { driver: { name: "PyMongo", version: "3.10.1" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "4.15.0-1050-gcp" }, platform: "CPython 3.7.5.final.0" }
+2020-01-28T06:35:22.595+0000 I  NETWORK  [conn67] end connection 127.0.0.1:49402 (6 connections now open)
+2020-01-28T06:35:41.558+0000 I  ACCESS   [conn3] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T06:36:11.560+0000 I  ACCESS   [conn8] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }
+2020-01-28T06:36:41.563+0000 I  ACCESS   [conn4] Unauthorized: not authorized on admin to execute command { serverStatus: 1, $db: "admin" }

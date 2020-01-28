@@ -127,13 +127,13 @@ import threading
 from time import sleep
 def doloop(ws, ws2):
 	msg_counter = 0
-	while ws.sock is None:
+	while not ws.sock.connected:
 		sleep(1)
 	while ws.sock.connected:
 		sleep(1)
 		msg_counter += 1
-	
-	doloop(ws3, ws4)	
+	print('doloop')
+	doloop(ws, ws2)	
 
 		
 if __name__ == "__main__":

@@ -58,6 +58,11 @@ def on_error(ws, error):
 
 def on_close(ws):
 	print("### closed ###")
+	ws.close()
+	ws.on_open = None
+	del ws
+
+
 	ws = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
 							  on_message = on_message,
 							  on_error = on_error,
@@ -66,7 +71,9 @@ def on_close(ws):
 	wst = threading.Thread(target=ws.run_forever)
 	wst.daemon = True
 	wst.start()
-
+	while not ws.sock.connected and conn_timeout:
+		sleep(1)
+			
  
 	
 
@@ -75,6 +82,10 @@ def on_error2(ws, error):
 
 def on_close2(ws):
 	print("### closed ###")
+	ws.close()
+	ws.on_open = None
+	del ws
+
 	ws2 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
 							  on_message = on_message2,
 							  on_error = on_error2,
@@ -83,7 +94,9 @@ def on_close2(ws):
 	wst2 = threading.Thread(target=ws2.run_forever)
 	wst2.daemon = True
 	wst2.start()
-
+	while not ws2.sock.connected:
+		sleep(1)
+		
 def on_open(ws):
 	def run(*args):
 		global sendCount
@@ -99,6 +112,7 @@ def on_open(ws):
 			"sig": client.generate_signature("/api/v1/private/subscribe", args) 
 		};
 		ws.send(json.dumps(obj))
+		sendCount = sendCount + 1
 		time.sleep(1)
 		#ws.close()
 		#print("thread terminating...")
@@ -152,9 +166,9 @@ if __name__ == "__main__":
 	wst2.daemon = True
 	wst2.start()
 	conn_timeout = 5
-	while not ws.sock.connected and conn_timeout:
+	while not ws.sock.connected:
 		sleep(1)
-		conn_timeout -= 1
+		
 
 	msg_counter = 0
 	try:
@@ -171,7 +185,9 @@ if __name__ == "__main__":
 		wst.daemon = True
 		wst.start()
 
-
+		while not ws.sock.connected:
+			sleep(1)
+		
 		ws2 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
 								  on_message = on_message2,
 								  on_error = on_error2,
@@ -180,5 +196,7 @@ if __name__ == "__main__":
 		wst2 = threading.Thread(target=ws2.run_forever)
 		wst2.daemon = True
 		wst2.start()
-
+		while not ws2.sock.connected:
+			sleep(1)
+		
  

@@ -76,7 +76,7 @@ def on_close(ws):
 	
 	msg_counter = 0
 
-	while ws.sock != None:
+	while ws.sock.connected:
 		sleep(1)
 		msg_counter += 1
  
@@ -104,7 +104,7 @@ def on_close2(ws):
 	
 	msg_counter = 0
 
-	while ws2.sock != None:
+	while ws2.sock.connected:
 		sleep(1)
 		msg_counter += 1
 def on_open(ws):

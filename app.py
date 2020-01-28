@@ -71,9 +71,14 @@ def on_close(ws):
 	wst = threading.Thread(target=ws.run_forever)
 	wst.daemon = True
 	wst.start()
-	while not ws.sock.connected and conn_timeout:
+	while not ws.sock.connected:
 		sleep(1)
-			
+	
+	msg_counter = 0
+
+	while ws.sock.connected:
+		sleep(1)
+		msg_counter += 1
  
 	
 
@@ -96,7 +101,12 @@ def on_close2(ws):
 	wst2.start()
 	while not ws2.sock.connected:
 		sleep(1)
-		
+	
+	msg_counter = 0
+
+	while ws2.sock.connected:
+		sleep(1)
+		msg_counter += 1
 def on_open(ws):
 	def run(*args):
 		global sendCount
@@ -171,32 +181,7 @@ if __name__ == "__main__":
 		
 
 	msg_counter = 0
-	try:
-		while ws.sock.connected:
-			sleep(1)
-			msg_counter += 1
-	except:
-		ws = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-							  on_message = on_message,
-							  on_error = on_error,
-							  on_close = on_close)
-		ws.on_open = on_open
-		wst = threading.Thread(target=ws.run_forever)
-		wst.daemon = True
-		wst.start()
 
-		while not ws.sock.connected:
-			sleep(1)
-		
-		ws2 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
-								  on_message = on_message2,
-								  on_error = on_error2,
-								  on_close = on_close2)
-		ws2.on_open = on_open2
-		wst2 = threading.Thread(target=ws2.run_forever)
-		wst2.daemon = True
-		wst2.start()
-		while not ws2.sock.connected:
-			sleep(1)
-		
- 
+	while ws.sock.connected:
+		sleep(1)
+		msg_counter += 1

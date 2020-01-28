@@ -121,9 +121,7 @@ def doloop(ws, ws2):
 	while ws.sock.connected:
 		sleep(1)
 		msg_counter += 1
-	ws.close()
-	ws.on_open = None
-	del ws
+	
 
 
 	ws3 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
@@ -139,8 +137,7 @@ def doloop(ws, ws2):
 	
 	msg_counter = 0
 
-	ws2.on_open = None
-	del ws2
+
 
 	ws4 = websocket.WebSocketApp("wss://www.deribit.com/ws/api/v1/",
 							  on_message = on_message2,
